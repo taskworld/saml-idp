@@ -21,7 +21,7 @@ jobs:
         id: check
 
   docker-build:
-    if: needs.version-bumped.outputs.result
+    if: needs.version-bumped.outputs.result == 'true'
     needs: version-bumped
 
     uses: ./.github/workflows/docker.yml
